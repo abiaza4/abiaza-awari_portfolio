@@ -115,23 +115,23 @@ export default function Portfolio() {
     <div className="min-h-screen bg-background pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Page Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             My <span className="text-primary">Portfolio</span>
           </h1>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="w-16 sm:w-20 h-1 bg-primary mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto px-2">
             A collection of projects I've worked on, showcasing my skills in
             full-stack development and problem-solving.
           </p>
         </div>
 
         {/* Featured Projects */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
+        <div className="mb-12 md:mb-16">
+          <h2 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
             <span className="text-primary">▹</span> Featured Projects
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {projects
               .filter(p => p.featured)
               .map((project, index) => (
@@ -140,15 +140,15 @@ export default function Portfolio() {
                   className="group rounded-xl bg-card border border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
                 >
                   {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-40 sm:h-48 overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
-                    <div className="absolute top-4 left-4">
-                      <Badge className="bg-background/80 backdrop-blur-sm border-none">
+                    <div className="absolute top-3 left-3">
+                      <Badge className="bg-background/80 backdrop-blur-sm border-none text-xs">
                         {getCategoryIcon(project.category)}
                         <span className="ml-1">{project.category}</span>
                       </Badge>
@@ -156,17 +156,17 @@ export default function Portfolio() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                  <div className="p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                    <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">
                       {project.description}
                     </p>
 
                     {/* Technologies */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.slice(0, 4).map(tech => (
+                    <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+                      {project.technologies.slice(0, 3).map(tech => (
                         <Badge
                           key={tech}
                           className="text-xs bg-primary/10 text-primary border-none"
@@ -174,31 +174,31 @@ export default function Portfolio() {
                           {tech}
                         </Badge>
                       ))}
-                      {project.technologies.length > 4 && (
+                      {project.technologies.length > 3 && (
                         <Badge className="text-xs bg-muted text-muted-foreground border-none">
-                          +{project.technologies.length - 4}
+                          +{project.technologies.length - 3}
                         </Badge>
                       )}
                     </div>
 
                     {/* Links */}
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 sm:gap-4">
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                        className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
-                        <Github size={16} />
+                        <Github size={14} />
                         Code
                       </a>
                       <a
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                        className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
-                        <ExternalLink size={16} />
+                        <ExternalLink size={14} />
                         Live Demo
                       </a>
                     </div>
@@ -209,28 +209,28 @@ export default function Portfolio() {
         </div>
 
         {/* Other Projects */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
+        <div className="mb-12 md:mb-16">
+          <h2 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
             <span className="text-primary">▹</span> Other Projects
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {projects
               .filter(p => !p.featured)
               .map((project, index) => (
                 <div
                   key={index}
-                  className="group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
+                  className="group p-4 sm:p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
                 >
-                  <div className="flex justify-between items-start mb-4">
+                  <div className="flex flex-col sm:flex-row justify-between items-start gap-3 mb-3 sm:mb-4">
                     <div>
-                      <h3 className="text-lg font-bold group-hover:text-primary transition-colors">
+                      <h3 className="text-base sm:text-lg font-bold group-hover:text-primary transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-xs sm:text-sm text-muted-foreground">
                         {project.category}
                       </p>
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 shrink-0">
                       <a
                         href={project.github}
                         target="_blank"
@@ -249,10 +249,10 @@ export default function Portfolio() {
                       </a>
                     </div>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1 sm:gap-2">
                     {project.technologies.map(tech => (
                       <Badge
                         key={tech}
@@ -268,30 +268,30 @@ export default function Portfolio() {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center py-12 px-8 rounded-3xl bg-gradient-to-br from-card via-card to-primary/5 border border-border">
-          <h2 className="text-2xl font-bold mb-4">Want to see more?</h2>
-          <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
+        <div className="text-center py-8 sm:py-12 px-4 sm:px-8 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-card via-card to-primary/5 border border-border">
+          <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Want to see more?</h2>
+          <p className="text-muted-foreground mb-6 max-w-lg mx-auto text-sm sm:text-base">
             Check out my GitHub for more projects, or get in touch to discuss
             your next project.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
             <a
               href="https://github.com/abiaza4"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="bg-primary hover:bg-primary/90">
-                <Github className="mr-2" size={18} />
+              <Button className="bg-primary hover:bg-primary/90 text-sm sm:text-base">
+                <Github className="mr-2" size={16} />
                 GitHub Profile
               </Button>
             </a>
             <Link href="/demos">
-              <Button variant="outline" className="border-primary/50">
+              <Button variant="outline" className="border-primary/50 text-sm sm:text-base">
                 Try Live Demos
               </Button>
             </Link>
             <Link href="/contact">
-              <Button variant="outline" className="border-primary/50">
+              <Button variant="outline" className="border-primary/50 text-sm sm:text-base">
                 Get In Touch
               </Button>
             </Link>

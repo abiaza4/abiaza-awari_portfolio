@@ -188,45 +188,45 @@ export default function Home() {
           </div>
 
           {/* Quick Contact Info */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-border">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-12 pt-8 border-t border-border">
             <a
               href="mailto:abiazaawari@gmail.com"
-              className="flex items-center gap-3 group cursor-pointer"
+              className="flex items-center gap-2 sm:gap-3 group cursor-pointer"
             >
-              <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <Mail className="text-primary" size={20} />
+              <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
+                <Mail className="text-primary" size={18} />
               </div>
-              <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+              <span className="text-muted-foreground group-hover:text-foreground transition-colors text-sm sm:text-base truncate">
                 abiazaawari@gmail.com
               </span>
             </a>
             <a
               href="tel:+211922257944"
-              className="flex items-center gap-3 group cursor-pointer"
+              className="flex items-center gap-2 sm:gap-3 group cursor-pointer"
             >
-              <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <Phone className="text-primary" size={20} />
+              <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
+                <Phone className="text-primary" size={18} />
               </div>
-              <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+              <span className="text-muted-foreground group-hover:text-foreground transition-colors text-sm sm:text-base">
                 +211 922 257 944
               </span>
             </a>
             <a
               href="tel:+250791902058"
-              className="flex items-center gap-3 group cursor-pointer"
+              className="flex items-center gap-2 sm:gap-3 group cursor-pointer"
             >
-              <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <Phone className="text-primary" size={20} />
+              <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
+                <Phone className="text-primary" size={18} />
               </div>
-              <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+              <span className="text-muted-foreground group-hover:text-foreground transition-colors text-sm sm:text-base">
                 +250 791 902 058
               </span>
             </a>
-            <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-primary/10">
-                <MapPin className="text-primary" size={20} />
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                <MapPin className="text-primary" size={18} />
               </div>
-              <span className="text-muted-foreground">
+              <span className="text-muted-foreground text-sm sm:text-base">
                 Kigali, Rwanda
               </span>
             </div>
